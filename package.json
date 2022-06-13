@@ -1,6 +1,6 @@
 {
   "name": "eosio-wasm-js",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A utility tool that serialises EOSIO based blockchain types to WebAssembly hex string.",
   "main": "public/index.js",
   "scripts": {
@@ -62,10 +62,12 @@
     "eslint-plugin-prettier": "^3.3.0",
     "jsdoc-md": "^11.0.0",
     "prettier": "^2.2.1",
-    "test-director": "^6.0.0"
+    "test-director": "^6.0.0",
+    "base58-js": "*",
+    "ripemd160-js": "*"
   },
-  "dependencies": {
-    "base58-js": "^1.0.0",
-    "ripemd160-js": "^1.2.0"
+  "peerDependencies": {
+    "base58-js": "*",
+    "ripemd160-js": "*"
   }
 }
