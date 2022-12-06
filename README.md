@@ -19,7 +19,10 @@ Consider a [BigInt](https://caniuse.com/?search=bigint) polyfill library for saf
 
 # API
 
-## object serialize
+- [Object serialize](#object-serialize)
+- [function serialize_actions](#function-serialize_actions)
+
+## Object serialize
 
 The core object that contains all the EOSIO based types to serialize.
 
@@ -40,9 +43,19 @@ _Ways to `import`._
 _Serialize EOSIO name type._
 
 > ```js
-> import serialize_name from 'eosio-wasm-js/public/serialize/name.js'
->
 > serialize_name('eosio')
 > ```
 >
 > The logged output was 0000000000ea3055
+
+---
+
+## function serialize_actions
+
+Serializes a list of EOSIO actions.
+
+| Parameter     | Type    | Description                   |
+| :------------ | :------ | :---------------------------- |
+| `action_list` | actions | List of actions to serialize. |
+
+**Returns:** string — Serialized actions.

@@ -1,26 +1,27 @@
-import { rejects, strictEqual, throws } from 'assert'
-import wasm from '../public/index.js'
-import serialise_asset from '../public/serialize/asset.js'
-import block_time_stamp from '../public/serialize/block_time_stamp.js'
-import bool from '../public/serialize/bool.js'
-import bytes from '../public/serialize/bytes.js'
-import checksum from '../public/serialize/checksum.js'
-import extended_asset from '../public/serialize/extended_asset.js'
-import float128 from '../public/serialize/float128.js'
-import float32 from '../public/serialize/float32.js'
-import float64 from '../public/serialize/float64.js'
-import integer from '../public/serialize/int.js'
-import name from '../public/serialize/name.js'
-import public_key from '../public/serialize/public_key.js'
-import signature from '../public/serialize/signature.js'
-import string from '../public/serialize/string.js'
-import symbol from '../public/serialize/symbol.js'
-import symbol_code from '../public/serialize/symbol_code.js'
-import time_point from '../public/serialize/time_point.js'
-import time_point_sec from '../public/serialize/time_point_sec.js'
-import unsigned_integer from '../public/serialize/uint.js'
-import varint32 from '../public/serialize/varint32.js'
-import varuint32 from '../public/serialize/varuint32.js'
+import { deepStrictEqual, rejects, strictEqual, throws } from 'assert'
+import serialise_asset from '../asset.js'
+import block_time_stamp from '../block_time_stamp.js'
+import bool from '../bool.js'
+import bytes from '../bytes.js'
+import checksum from '../checksum.js'
+import extended_asset from '../extended_asset.js'
+import float128 from '../float128.js'
+import float32 from '../float32.js'
+import float64 from '../float64.js'
+import wasm from '../index.js'
+import integer from '../int.js'
+import name from '../name.js'
+import public_key from '../public_key.js'
+import signature from '../signature.js'
+import string from '../string.js'
+import symbol from '../symbol.js'
+import symbol_code from '../symbol_code.js'
+import time_point from '../time_point.js'
+import time_point_sec from '../time_point_sec.js'
+import transaction_header from '../transaction_header.js'
+import unsigned_integer from '../uint.js'
+import varint32 from '../varint32.js'
+import varuint32 from '../varuint32.js'
 
 export default tests => {
   // These values are generated from cleos.
@@ -344,5 +345,72 @@ export default tests => {
       '2800000000000000004b454b530000000000b8b4651dbb8a'
     )
     throws(() => extended_asset('40 KEKS'))
+  })
+
+  tests.add('Serialize actions', () => {
+    const actions = [
+      {
+        account: 'nutrijournal',
+        action: 'login',
+        authorization: [
+          {
+            actor: 'nutrijournal',
+            permission: 'owner'
+          }
+        ],
+        data: '10CDBC9A3E77B39E'.toLowerCase()
+      },
+      {
+        account: 'eosio.token',
+        action: 'transfer',
+        authorization: [
+          {
+            actor: 'nutrijournal',
+            permission: 'owner'
+          },
+          {
+            actor: 'relockeblock',
+            permission: 'active'
+          }
+        ],
+        data: '10CDBC9A3E77B39E00118D474144A3BA010000000000000004454F530000000000'.toLowerCase()
+      }
+    ]
+
+    deepStrictEqual(
+      wasm.actions(actions),
+      '0210cdbc9a3e77b39e0000000080e9188d0110cdbc9a3e77b39e0000000080ab26a70810cdbc9a3e77b39e00a6823403ea3055000000572d3ccdcd0210cdbc9a3e77b39e0000000080ab26a700118d474144a3ba00000000a8ed32322110cdbc9a3e77b39e00118d474144a3ba010000000000000004454f530000000000',
+      'Serialized actions'
+    )
+  })
+
+  tests.add('Serializee transaction header', () => {
+    const Transaction_header_object = {
+      expiration: 1670089081,
+      ref_block_num: 42562,
+      ref_block_prefix: 2492874965,
+      max_net_usage_words: 0,
+      max_cpu_usage_ms: 0,
+      delay_sec: 0
+    }
+
+    deepStrictEqual(
+      transaction_header(Transaction_header_object),
+      '79898b6342a6d5409694000000',
+      'Transaction header'
+    )
+
+    deepStrictEqual(
+      transaction_header({
+        expiration: 1670096442,
+        ref_block_num: 57208,
+        ref_block_prefix: 1939363295,
+        max_net_usage_words: 400,
+        max_cpu_usage_ms: 33,
+        delay_sec: 56
+      }),
+      '3aa68b6378dfdf55987390032138',
+      'Transaction header 2'
+    )
   })
 }

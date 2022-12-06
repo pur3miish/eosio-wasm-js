@@ -1,8 +1,22 @@
 {
   "name": "eosio-wasm-js",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "A utility tool that serialises EOSIO based blockchain types to WebAssembly hex string.",
   "main": "public/index.js",
+  "keywords": [
+    "EOSIO",
+    "blockchain",
+    "webassembly",
+    "serialize",
+    "types",
+    "javascript"
+  ],
+  "author": "pur3miish",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pur3miish/eosio-wasm-js/issues"
+  },
+  "homepage": "https://github.com/pur3miish/eosio-wasm-js#readme",
   "scripts": {
     "prepare": "npm run prepare:jsdoc && npm run prepare:prettier",
     "prepare:jsdoc": "jsdoc-md",
@@ -13,58 +27,87 @@
     "test:prettier": "prettier -c .",
     "prepublishOnly": "npm test"
   },
-  "files": [
-    "public",
-    "private"
-  ],
   "engines": {
-    "node": ">= 13"
+    "node": ">=14"
   },
   "browserslist": [
     "> 0.5%, not OperaMini all, not IE > 0, not dead"
   ],
+  "sideEffects": false,
   "exports": {
-    ".": {
-      "import": "./public/index.js",
-      "require": "./public/index.js"
-    },
-    "./public/*": "./public/*",
-    "./package": "./package.json",
-    "./package.json": "./package.json"
+    ".": "./index.js",
+    "./package.json": "./package.json",
+    "./actions.js": "./actions.js",
+    "./asset.js": "./asset.js",
+    "./block_time_stamp.js": "./block_time_stamp.js",
+    "./bool.js": "./bool.js",
+    "./bytes.js": "./bytes.js",
+    "./checksum.js": "./checksum.js",
+    "./extended_asset.js": "./extended_asset.js",
+    "./float32.js": "./float32.js",
+    "./float64.js": "./float64.js",
+    "./float128.js": "./float128.js",
+    "./int.js": "./int.js",
+    "./name.js": "./name.js",
+    "./permission.js": "./permission.js",
+    "./public_key.js": "./public_key.js",
+    "./signature.js": "./signature.js",
+    "./string.js": "./string.js",
+    "./symbol_code.js": "./symbol_code.js",
+    "./symbol.js": "./symbol.js",
+    "./time_point_sec.js": "./time_point_sec.js",
+    "./time_point.js": "./time_point.js",
+    "./transaction_header.js": "./transaction_header.js",
+    "./uint.js": "./uint.js",
+    "./varint32.js": "./varint32.js",
+    "./varuint32": "./varuint32.js"
   },
+  "files": [
+    "index.js",
+    "utils",
+    "actions.js",
+    "asset.js",
+    "block_time_stamp.js",
+    "bool.js",
+    "bytes.js",
+    "checksum.js",
+    "extended_asset.js",
+    "float32.js",
+    "float64.js",
+    "float128.js",
+    "int.js",
+    "name.js",
+    "public_key.js",
+    "signature.js",
+    "string.js",
+    "symbol.js",
+    "symbol_code.js",
+    "time_point.js",
+    "time_point_sec.js",
+    "uint.js",
+    "varint32.js",
+    "varuint32.js",
+    "transaction_header.js",
+    "permission.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pur3miish/eosio-wasm-js.git"
   },
-  "keywords": [
-    "EOSIO",
-    "blockchain",
-    "webassembly",
-    "serialise",
-    "types",
-    "javascript"
-  ],
-  "author": "pur3miish",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/pur3miish/eosio-wasm-js/issues"
-  },
-  "homepage": "https://github.com/pur3miish/eosio-wasm-js#readme",
   "devDependencies": {
-    "coverage-node": "^5.0.1",
-    "eslint": "^7.20.0",
-    "eslint-config-env": "^21.0.0",
+    "coverage-node": "^8.0.0",
+    "eslint": "^8.29.0",
+    "eslint-config-env": "^23.0.2",
     "eslint-config-prettier": "^8.1.0",
-    "eslint-plugin-compat": "^3.9.0",
+    "eslint-plugin-compat": "^4.0.2",
     "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jsdoc": "^35.4.1",
+    "eslint-plugin-jsdoc": "^37.9.7",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^3.3.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "jsdoc-md": "^11.0.0",
     "prettier": "^2.2.1",
-    "test-director": "^6.0.0",
-    "base58-js": "*",
-    "ripemd160-js": "*"
+    "ripemd160-js": "*",
+    "test-director": "^10.0.0"
   },
   "peerDependencies": {
     "base58-js": "*",

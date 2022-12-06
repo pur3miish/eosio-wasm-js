@@ -10,15 +10,20 @@
  * @ignore
  */
 const uint = (number, bytes) => {
-  // https://github.com/amilajack/eslint-plugin-compat/issues/457
-  // eslint-disable-next-line compat/compat
   number = BigInt(number)
 
   if (number < BigInt(0)) throw new Error('expected a positive number')
   if (number > '0x'.padEnd(2 + bytes * 2, 'ff'))
     throw new Error(`uint “${number}” is too large for ${bytes} bytes`)
   const hexString = number.toString(16).padStart(bytes * 2, '0') // 2 nibble per byte
-  return Buffer.from(hexString, 'hex').reverse().toString('hex')
+
+  let hex_endian = ''
+  hexString
+    .match(/[a-zA-Z0-9]{2}/gmu)
+    .reverse()
+    .forEach(i => (hex_endian += i))
+
+  return hex_endian
 }
 
 module.exports = uint
