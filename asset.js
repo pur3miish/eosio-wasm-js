@@ -13,7 +13,7 @@ function asset(asset_string) {
     BigInt(asset_string.replace(/[^0-9]/gu, '')) & 0xffffffffffffffffn
 
   if (amount.toString().length > 19)
-    throw new RangeError('Asset value is too large.')
+    throw new RangeError('Maximum asset magnitude is 19.')
 
   amount = amount.toString('16')
   const serialized_amount = amount
