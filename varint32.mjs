@@ -1,6 +1,4 @@
-'use strict'
-
-const varuint32 = require('./varuint32')
+import varuint32 from './varuint32.mjs'
 
 /**
  * varint32
@@ -14,4 +12,4 @@ function varint32(number) {
   return varuint32((number << 1) ^ (number >> 31))
 }
 
-module.exports = varint32
+export default varint32

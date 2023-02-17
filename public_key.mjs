@@ -1,7 +1,5 @@
-'use strict'
-
-const { base58_to_binary } = require('base58-js')
-const ripemd160 = require('ripemd160-js')
+import { base58_to_binary } from 'base58-js'
+import ripemd160 from 'ripemd160-js'
 
 /**
  * Serilaises EOS WIF public key to WASM hex string.
@@ -30,4 +28,4 @@ async function public_key(wif_public_key) {
   )
 }
 
-module.exports = public_key
+export default public_key

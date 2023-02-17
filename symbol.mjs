@@ -1,5 +1,3 @@
-'use strict'
-
 /**
  * Serilaises a symbol string to a WASM hex string.
  * @name symbol
@@ -27,4 +25,4 @@ function symbol(symbol_string) {
   )
 }
 
-module.exports = symbol
+export default symbol

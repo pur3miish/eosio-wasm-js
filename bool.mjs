@@ -1,5 +1,3 @@
-'use strict'
-
 /**
  * Serialise Boolean.
  * @kind function
@@ -12,4 +10,4 @@ function bool(boolean) {
   return boolean ? '01' : '00'
 }
 
-module.exports = bool
+export default bool

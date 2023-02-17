@@ -1,6 +1,5 @@
-'use strict'
-const uint = require('./uint.js')
-const checkDateParse = require('./utils/checkDataParse.js')
+import uint from './uint.mjs'
+import checkDateParse from './utils/checkDataParse.mjs'
 
 /**
  * Convert date in ISO format to `block_timestamp_type` (half-seconds since a different epoch)
@@ -14,4 +13,4 @@ function block_time_stamp(time_String) {
   )
 }
 
-module.exports = block_time_stamp
+export default block_time_stamp

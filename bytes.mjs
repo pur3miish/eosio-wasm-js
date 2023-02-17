@@ -1,6 +1,4 @@
-'use strict'
-
-const varuint32 = require('./varuint32.js')
+import varuint32 from './varuint32.mjs'
 
 /**
  * Serilaises byte string to WASM bytes.
@@ -16,4 +14,4 @@ function bytes(byte_string) {
   return varuint32(byte_string.length) + byte_string
 }
 
-module.exports = bytes
+export default bytes

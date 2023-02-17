@@ -1,5 +1,12 @@
 # EOS WASM JS
 
+## v3.0.0
+
+### Major
+
+- Package is now ESM from CJS.
+- Serialize action data argument is now called serialize [hex_data](/actions.mjs).
+
 ## v2.1.1
 
 ### Patch

@@ -1,6 +1,5 @@
-'use strict'
-const asset = require('./asset')
-const name = require('./name')
+import asset from './asset.mjs'
+import name from './name.mjs'
 
 /**
  * Serialises an extended asset to WASM hex string.
@@ -15,4 +14,4 @@ function extended_asset(ea_string) {
   return asset(quant) + name(contract)
 }
 
-module.exports = extended_asset
+export default extended_asset

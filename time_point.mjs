@@ -1,6 +1,5 @@
-'use strict'
-const uint = require('./uint')
-const checkDateParse = require('./utils/checkDataParse.js')
+import uint from './uint.mjs'
+import checkDateParse from './utils/checkDataParse.mjs'
 
 /**
  * Serialises time point into WASM hex string.
@@ -13,4 +12,4 @@ function time_point(time_string) {
   return uint(dateToTimePoint(time_string), 8)
 }
 
-module.exports = time_point
+export default time_point

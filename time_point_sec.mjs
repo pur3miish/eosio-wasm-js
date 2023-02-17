@@ -1,7 +1,5 @@
-'use strict'
-
-const uint = require('./uint.js')
-const checkDateParse = require('./utils/checkDataParse.js')
+import uint from './uint.mjs'
+import checkDateParse from './utils/checkDataParse.mjs'
 
 /**
  * Convert date in ISO format to `time_point_sec` (seconds since epoch) WASM string.
@@ -12,4 +10,4 @@ function time_point_sec(time_string) {
   return uint(Math.round(checkDateParse(time_string + 'Z') / 1000), 4)
 }
 
-module.exports = time_point_sec
+export default time_point_sec

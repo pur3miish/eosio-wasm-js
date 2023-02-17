@@ -1,5 +1,3 @@
-'use strict'
-
 /**
  * Serialises EOSIO asset type to WASM hex string.
  * @kind function
@@ -44,4 +42,4 @@ function asset(asset_string) {
   ].reduce((acc, i) => (acc += i))
 }
 
-module.exports = asset
+export default asset

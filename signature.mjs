@@ -1,6 +1,5 @@
-'use strict'
-const { base58_to_binary } = require('base58-js')
-const ripemd160 = require('ripemd160-js')
+import { base58_to_binary } from 'base58-js'
+import ripemd160 from 'ripemd160-js'
 
 /**
  * Serialises an EOS signature to WASM hex string.
@@ -36,4 +35,4 @@ async function signature(sig_string) {
   )
 }
 
-module.exports = signature
+export default signature

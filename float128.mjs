@@ -1,5 +1,3 @@
-'use strict'
-
 /**
  * Validates a little endian float 128 hex string.
  * @param {string} f128 Hexacecimal representation of the float128.
@@ -16,4 +14,4 @@ function float128(f128) {
   return f128
 }
 
-module.exports = float128
+export default float128

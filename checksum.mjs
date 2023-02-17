@@ -1,5 +1,3 @@
-'use strict'
-
 /**
  * Creates a checksum WASM hex string.
  * @param {string} byte_string Hexadecimal string.
@@ -16,4 +14,4 @@ function checksum(byte_string, bytes) {
   return byte_string.padStart(2, '00').padEnd(bytes * 2, '00')
 }
 
-module.exports = checksum
+export default checksum

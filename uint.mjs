@@ -1,5 +1,3 @@
-'use strict'
-
 /**
  * Serializes any unsigned integer (uint) to hexadecimal string.
  * @name uint
@@ -26,4 +24,4 @@ const uint = (number, bytes) => {
   return hex_endian
 }
 
-module.exports = uint
+export default uint

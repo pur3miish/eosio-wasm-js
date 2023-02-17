@@ -1,27 +1,27 @@
 import { deepStrictEqual, rejects, strictEqual, throws } from 'assert'
-import serialise_asset from '../asset.js'
-import block_time_stamp from '../block_time_stamp.js'
-import bool from '../bool.js'
-import bytes from '../bytes.js'
-import checksum from '../checksum.js'
-import extended_asset from '../extended_asset.js'
-import float128 from '../float128.js'
-import float32 from '../float32.js'
-import float64 from '../float64.js'
-import wasm from '../index.js'
-import integer from '../int.js'
-import name from '../name.js'
-import public_key from '../public_key.js'
-import signature from '../signature.js'
-import string from '../string.js'
-import symbol from '../symbol.js'
-import symbol_code from '../symbol_code.js'
-import time_point from '../time_point.js'
-import time_point_sec from '../time_point_sec.js'
-import transaction_header from '../transaction_header.js'
-import unsigned_integer from '../uint.js'
-import varint32 from '../varint32.js'
-import varuint32 from '../varuint32.js'
+import serialise_asset from '../asset.mjs'
+import block_time_stamp from '../block_time_stamp.mjs'
+import bool from '../bool.mjs'
+import bytes from '../bytes.mjs'
+import checksum from '../checksum.mjs'
+import extended_asset from '../extended_asset.mjs'
+import float128 from '../float128.mjs'
+import float32 from '../float32.mjs'
+import float64 from '../float64.mjs'
+import wasm from '../index.mjs'
+import integer from '../int.mjs'
+import name from '../name.mjs'
+import public_key from '../public_key.mjs'
+import signature from '../signature.mjs'
+import string from '../string.mjs'
+import symbol from '../symbol.mjs'
+import symbol_code from '../symbol_code.mjs'
+import time_point from '../time_point.mjs'
+import time_point_sec from '../time_point_sec.mjs'
+import transaction_header from '../transaction_header.mjs'
+import unsigned_integer from '../uint.mjs'
+import varint32 from '../varint32.mjs'
+import varuint32 from '../varuint32.mjs'
 
 export default tests => {
   // These values are generated from cleos.
@@ -358,7 +358,7 @@ export default tests => {
             permission: 'owner'
           }
         ],
-        data: '10CDBC9A3E77B39E'.toLowerCase()
+        hex_data: '10CDBC9A3E77B39E'.toLowerCase()
       },
       {
         account: 'eosio.token',
@@ -373,7 +373,8 @@ export default tests => {
             permission: 'active'
           }
         ],
-        data: '10CDBC9A3E77B39E00118D474144A3BA010000000000000004454F530000000000'.toLowerCase()
+        hex_data:
+          '10CDBC9A3E77B39E00118D474144A3BA010000000000000004454F530000000000'.toLowerCase()
       }
     ]
 

@@ -1,5 +1,3 @@
-'use strict'
-
 /**
  * Serilaises a symbol code to a WASM hex string.
  * @name symbol
@@ -18,4 +16,4 @@ function symbol_code(symbol_code_string) {
     .padEnd(16, '00')
 }
 
-module.exports = symbol_code
+export default symbol_code

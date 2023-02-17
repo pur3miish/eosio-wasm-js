@@ -1,5 +1,3 @@
-'use strict'
-
 /**
  * Serialises a varuint32 number to a WASM hex string.
  * @kind function
@@ -17,4 +15,4 @@ function varuint32(number, buffer = []) {
         .reduce((acc, i) => (acc += i.toString(16).padStart(2, '00')), '')
 }
 
-module.exports = varuint32
+export default varuint32

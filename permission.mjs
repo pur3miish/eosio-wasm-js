@@ -1,6 +1,4 @@
-'use strict'
-
-const serialize_name = require('./name.js')
+import serialize_name from './name.mjs'
 
 /**
  * Serializes EOS permission.
@@ -13,4 +11,4 @@ function serialize_permission({ actor, permission }) {
   return serialize_name(actor) + serialize_name(permission)
 }
 
-module.exports = serialize_permission
+export default serialize_permission

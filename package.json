@@ -1,7 +1,7 @@
 {
   "name": "eosio-wasm-js",
-  "version": "2.1.1",
-  "description": "A utility tool that serialises EOSIO based blockchain types to WebAssembly hex string.",
+  "version": "3.0.0",
+  "description": "A utility tool that serialises EOSIO and Antelope based blockchain action data to WebAssembly hex string.",
   "main": "public/index.js",
   "keywords": [
     "EOSIO",

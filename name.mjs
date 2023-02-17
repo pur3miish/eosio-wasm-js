@@ -1,5 +1,3 @@
-'use strict'
-
 /**
  * Serialises a EOS name into a WASM hex string.
  * @name name
@@ -41,4 +39,4 @@ function name(name_string) {
   ).reduce((acc, i) => (acc += i.toString(16).padStart(2, '00')), '')
 }
 
-module.exports = name
+export default name

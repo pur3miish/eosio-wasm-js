@@ -1,4 +1,3 @@
-'use strict'
 /**
  * Parse ISO date to `time_point`.
  * @param {string} date ISO Date.
@@ -11,4 +10,4 @@ const checkDateParse = date => {
   return result
 }
 
-module.exports = checkDateParse
+export default checkDateParse

@@ -1,5 +1,3 @@
-'use strict'
-
 /**
  * Serialises a float32 to a WASM hex string.
  * @param {number | string} f32 Float32 to be serialised.
@@ -12,4 +10,4 @@ function float32(f32) {
   )
 }
 
-module.exports = float32
+export default float32

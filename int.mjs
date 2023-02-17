@@ -1,5 +1,4 @@
-'use strict'
-const uint = require('./uint')
+import uint from './uint.mjs'
 
 /**
  * Serializes any signed integer (uint) to hexadecimal code.
@@ -26,4 +25,4 @@ const int = (number, bytes = 1) => {
   return uint(number, bytes)
 }
 
-module.exports = int
+export default int

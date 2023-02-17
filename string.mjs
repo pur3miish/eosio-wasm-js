@@ -1,6 +1,4 @@
-'use strict'
-
-const varuint32 = require('./varuint32.js')
+import varuint32 from './varuint32.mjs'
 
 /**
  * serialises string into a WASM hex string.
@@ -20,4 +18,4 @@ function serialise_string(str) {
   )
 }
 
-module.exports = serialise_string
+export default serialise_string

@@ -1,6 +1,4 @@
-'use strict'
-
-const varuint32 = require('./varuint32.js')
+import varuint32 from './varuint32.mjs'
 
 const serialize_uint = uint => {
   let hex = uint.toString('16')
@@ -41,4 +39,4 @@ const serialize_transaction_header = ({
   serialize_uint(max_cpu_usage_ms) +
   varuint32(delay_sec)
 
-module.exports = serialize_transaction_header
+export default serialize_transaction_header
