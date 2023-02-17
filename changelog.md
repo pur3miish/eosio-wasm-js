@@ -1,5 +1,11 @@
 # EOS WASM JS
 
+## v3.0.1
+
+### Patch
+
+- Exports bug fixed in [package.json](/package.json)
+
 ## v3.0.0
 
 ### Major
