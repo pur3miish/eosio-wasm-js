@@ -1,4 +1,4 @@
-import varuint32 from './varuint32.mjs'
+import varuint32 from "./varuint32.mjs";
 
 /**
  * Serilaises byte string to WASM bytes.
@@ -7,11 +7,11 @@ import varuint32 from './varuint32.mjs'
  */
 function bytes(byte_string) {
   if (!byte_string.match(/^[A-F0-9a-f]+$/gmu))
-    throw new Error('Invalid hexadecimal string.')
+    throw new Error("Invalid hexadecimal string.");
 
-  byte_string = byte_string.toLowerCase()
+  byte_string = byte_string.toLowerCase();
 
-  return varuint32(byte_string.length) + byte_string
+  return varuint32(byte_string.length) + byte_string;
 }
 
-export default bytes
+export default bytes;

@@ -1,4 +1,4 @@
-import varuint32 from './varuint32.mjs'
+import varuint32 from "./varuint32.mjs";
 
 /**
  * varint32
@@ -9,7 +9,7 @@ import varuint32 from './varuint32.mjs'
  * @ignore
  */
 function varint32(number) {
-  return varuint32((number << 1) ^ (number >> 31))
+  return varuint32((number << 1) ^ (number >> 31));
 }
 
-export default varint32
+export default varint32;

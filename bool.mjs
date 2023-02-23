@@ -7,7 +7,7 @@
  * @ignore
  */
 function bool(boolean) {
-  return boolean ? '01' : '00'
+  return boolean ? "01" : "00";
 }
 
-export default bool
+export default bool;

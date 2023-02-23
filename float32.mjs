@@ -5,9 +5,9 @@
  */
 function float32(f32) {
   return [...new Uint8Array(Float32Array.of(f32).buffer)].reduce(
-    (acc, i) => (acc += i.toString('16').padStart(2, '00')),
-    ''
-  )
+    (acc, i) => (acc += i.toString("16").padStart(2, "00")),
+    ""
+  );
 }
 
-export default float32
+export default float32;

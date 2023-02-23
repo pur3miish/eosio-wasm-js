@@ -1,6 +1,6 @@
 {
   "name": "eosio-wasm-js",
-  "version": "3.0.1",
+  "version": "4.0.0",
   "description": "A utility tool that serialises EOSIO and Antelope based blockchain action data to WebAssembly hex string.",
   "main": "public/index.mjs",
   "keywords": [
@@ -18,13 +18,12 @@
   },
   "homepage": "https://github.com/pur3miish/eosio-wasm-js#readme",
   "scripts": {
-    "prepare": "npm run prepare:jsdoc && npm run prepare:prettier",
-    "prepare:jsdoc": "jsdoc-md",
-    "prepare:prettier": "prettier --write readme.md && prettier --write changelog.md",
-    "test": "npm run test:api && npm run test:eslint && npm run test:prettier",
-    "test:api": "coverage-node test/index.test.mjs",
-    "test:eslint": "eslint .",
-    "test:prettier": "prettier -c .",
+    "eslint": "eslint .",
+    "prettier": "prettier -c .",
+    "prettier:readme": "prettier --write readme.md",
+    "types": "tsc -p jsconfig.json",
+    "tests": "coverage-node test/index.test.mjs",
+    "test": "npm run eslint && npm run prettier && npm run types && npm run tests",
     "prepublishOnly": "npm test"
   },
   "engines": {
@@ -35,7 +34,7 @@
   ],
   "sideEffects": false,
   "exports": {
-    ".": "./index.mjs",
+    "./serialize.mjs": "./serialize.mjs",
     "./package.json": "./package.json",
     "./actions.mjs": "./actions.mjs",
     "./asset.mjs": "./asset.mjs",
@@ -63,7 +62,7 @@
     "./varuint32": "./varuint32.mjs"
   },
   "files": [
-    "index.mjs",
+    "serialize.mjs",
     "utils/*.mjs",
     "actions.mjs",
     "asset.mjs",
@@ -95,19 +94,13 @@
     "url": "git+https://github.com/pur3miish/eosio-wasm-js.git"
   },
   "devDependencies": {
+    "@types/node": "^18.13.0",
     "coverage-node": "^8.0.0",
-    "eslint": "^8.29.0",
-    "eslint-config-env": "^23.0.2",
-    "eslint-config-prettier": "^8.1.0",
-    "eslint-plugin-compat": "^4.0.2",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jsdoc": "^37.9.7",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "jsdoc-md": "^11.0.0",
-    "prettier": "^2.2.1",
-    "ripemd160-js": "*",
-    "test-director": "^10.0.0"
+    "eslint": "^8.34.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "prettier": "^2.8.4",
+    "test-director": "^10.0.0",
+    "typescript": "^4.9.5"
   },
   "peerDependencies": {
     "base58-js": "*",

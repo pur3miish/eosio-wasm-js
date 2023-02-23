@@ -8,38 +8,38 @@
  */
 function asset(asset_string) {
   let amount =
-    BigInt(asset_string.replace(/[^0-9]/gu, '')) & 0xffffffffffffffffn
+    BigInt(asset_string.replace(/[^0-9]/gu, "")) & 0xffffffffffffffffn;
 
   if (amount.toString().length > 19)
-    throw new RangeError('Maximum asset magnitude is 19.')
+    throw new RangeError("Maximum asset magnitude is 19.");
 
-  amount = amount.toString('16')
+  amount = amount.toString("16");
   const serialized_amount = amount
-    .padStart(amount.length % 2 ? amount.length + 1 : amount.length, '0')
+    .padStart(amount.length % 2 ? amount.length + 1 : amount.length, "0")
     .match(/.{1,2}/gu)
-    .reverse()
+    .reverse();
 
   const precision = asset_string
-    .replace(/^(\s*)?(-|\+)?(\s*)?\d*\.?|\W?\D*$/gu, '')
+    .replace(/^(\s*)?(-|\+)?(\s*)?\d*\.?|\W?\D*$/gu, "")
     .length.toString(16)
-    .padStart(2, '0')
+    .padStart(2, "0");
 
-  const name = asset_string.replace(/[^A-Z]/gu, '')
+  const name = asset_string.replace(/[^A-Z]/gu, "");
 
   if (name.length > 7 || !name.length)
     throw new TypeError(
-      'Asset symbol needs to be between 1 - 7 uppercase characters.'
-    )
+      "Asset symbol needs to be between 1 - 7 uppercase characters."
+    );
 
   return [
     ...serialized_amount,
-    ...new Array(8 - serialized_amount.length).fill('00'),
+    ...new Array(8 - serialized_amount.length).fill("00"),
     precision,
     ...name
       .match(/./gu)
-      .map(i => i.charCodeAt(0).toString('16').padStart(2, '0')),
-    ...new Array(7 - name.length).fill('00')
-  ].reduce((acc, i) => (acc += i))
+      .map((i) => i.charCodeAt(0).toString("16").padStart(2, "0")),
+    ...new Array(7 - name.length).fill("00"),
+  ].reduce((acc, i) => (acc += i));
 }
 
-export default asset
+export default asset;

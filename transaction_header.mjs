@@ -1,17 +1,17 @@
-import varuint32 from './varuint32.mjs'
+import varuint32 from "./varuint32.mjs";
 
-const serialize_uint = uint => {
-  let hex = uint.toString('16')
-  if (hex.length % 2) hex = `0${hex}`
-  return hex
-}
+const serialize_uint = (uint) => {
+  let hex = uint.toString("16");
+  if (hex.length % 2) hex = `0${hex}`;
+  return hex;
+};
 
-const serialize_uint_LE = uint =>
+const serialize_uint_LE = (uint) =>
   serialize_uint(uint)
     .match(/.{1,2}/gmu)
     .reverse()
     .join()
-    .replace(/,/gmu, '')
+    .replace(/,/gmu, "");
 
 /**
  * Serializes EOS transaction header
@@ -30,13 +30,13 @@ const serialize_transaction_header = ({
   ref_block_prefix,
   max_net_usage_words,
   max_cpu_usage_ms,
-  delay_sec
+  delay_sec,
 }) =>
   serialize_uint_LE(expiration) +
   serialize_uint_LE(ref_block_num) +
   serialize_uint_LE(ref_block_prefix) +
   varuint32(max_net_usage_words) +
   serialize_uint(max_cpu_usage_ms) +
-  varuint32(delay_sec)
+  varuint32(delay_sec);
 
-export default serialize_transaction_header
+export default serialize_transaction_header;

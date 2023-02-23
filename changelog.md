@@ -1,4 +1,14 @@
-# EOS WASM JS
+# EOSIO WASM JS
+
+## v4.0.0
+
+### Major
+
+- Renamed index.mjs to [serialize.mjs](./serialize.mjs)
+
+### Patch
+
+- Added Deno support.
 
 ## v3.0.1
 

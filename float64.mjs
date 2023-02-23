@@ -5,9 +5,9 @@
  */
 function float64(f64) {
   return [...new Uint8Array(Float64Array.of(f64).buffer)].reduce(
-    (acc, i) => (acc += i.toString('16').padStart(2, '00')),
-    ''
-  )
+    (acc, i) => (acc += i.toString("16").padStart(2, "00")),
+    ""
+  );
 }
 
-export default float64
+export default float64;

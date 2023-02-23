@@ -1,4 +1,4 @@
-import uint from './uint.mjs'
+import uint from "./uint.mjs";
 
 /**
  * Serializes any signed integer (uint) to hexadecimal code.
@@ -10,19 +10,19 @@ import uint from './uint.mjs'
  * @ignore
  */
 const int = (number, bytes = 1) => {
-  number = BigInt(number)
-  let signed
+  number = BigInt(number);
+  let signed;
   // negative numbers
-  if (number.toString().slice(0, 1) == '-') signed = true
+  if (number.toString().slice(0, 1) == "-") signed = true;
 
-  const max = BigInt('0x7f'.padEnd(2 + bytes * 2, 'ff'))
-  const min = BigInt('0x80'.padEnd(2 + bytes * 2, '00'))
-  const andGate = BigInt('0xff'.padEnd(2 + bytes * 2, 'ff'))
+  const max = BigInt("0x7f".padEnd(2 + bytes * 2, "ff"));
+  const min = BigInt("0x80".padEnd(2 + bytes * 2, "00"));
+  const andGate = BigInt("0xff".padEnd(2 + bytes * 2, "ff"));
 
-  if (number > max) throw new RangeError('Signed int too large.')
-  if (number < -min) throw new RangeError('Signed int too small.')
-  if (signed) return uint(number & andGate, bytes)
-  return uint(number, bytes)
-}
+  if (number > max) throw new RangeError("Signed int too large.");
+  if (number < -min) throw new RangeError("Signed int too small.");
+  if (signed) return uint(number & andGate, bytes);
+  return uint(number, bytes);
+};
 
-export default int
+export default int;

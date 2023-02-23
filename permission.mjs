@@ -1,4 +1,4 @@
-import serialize_name from './name.mjs'
+import serialize_name from "./name.mjs";
 
 /**
  * Serializes EOS permission.
@@ -8,7 +8,7 @@ import serialize_name from './name.mjs'
  * @returns {string} Hex string for the serialized persmission.
  */
 function serialize_permission({ actor, permission }) {
-  return serialize_name(actor) + serialize_name(permission)
+  return serialize_name(actor) + serialize_name(permission);
 }
 
-export default serialize_permission
+export default serialize_permission;

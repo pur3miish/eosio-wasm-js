@@ -8,20 +8,20 @@
  * @ignore
  */
 const uint = (number, bytes) => {
-  number = BigInt(number)
+  number = BigInt(number);
 
-  if (number < BigInt(0)) throw new Error('expected a positive number')
-  if (number > '0x'.padEnd(2 + bytes * 2, 'ff'))
-    throw new Error(`uint “${number}” is too large for ${bytes} bytes`)
-  const hexString = number.toString(16).padStart(bytes * 2, '0') // 2 nibble per byte
+  if (number < BigInt(0)) throw new Error("expected a positive number");
+  if (number > "0x".padEnd(2 + bytes * 2, "ff"))
+    throw new Error(`uint “${number}” is too large for ${bytes} bytes`);
+  const hexString = number.toString(16).padStart(bytes * 2, "0"); // 2 nibble per byte
 
-  let hex_endian = ''
+  let hex_endian = "";
   hexString
     .match(/[a-zA-Z0-9]{2}/gmu)
     .reverse()
-    .forEach(i => (hex_endian += i))
+    .forEach((i) => (hex_endian += i));
 
-  return hex_endian
-}
+  return hex_endian;
+};
 
-export default uint
+export default uint;
