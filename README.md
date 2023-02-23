@@ -15,7 +15,7 @@ For Deno, make sure you include this import in your `deno.json` file:
 ```JSON
 {
   "imports": {
-   "eosio-wasm-js": "https://deno.land/x/eosio_wasm_js"
+   "eosio-wasm-js/": "https://deno.land/x/eosio_wasm_js/"
   }
 }
 ```
