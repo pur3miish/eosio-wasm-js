@@ -58,7 +58,7 @@
     "./transaction_header.mjs": "./transaction_header.mjs",
     "./uint.mjs": "./uint.mjs",
     "./varint32.mjs": "./varint32.mjs",
-    "./varuint32": "./varuint32.mjs"
+    "./varuint32.mjs": "./varuint32.mjs"
   },
   "files": [
     "serialize.mjs",
