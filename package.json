@@ -12,9 +12,7 @@
   ],
   "author": "pur3miish",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/pur3miish/eosio-wasm-js/issues"
-  },
+  "bugs": "https://github.com/pur3miish/eosio-wasm-js/issues",
   "homepage": "https://github.com/pur3miish/eosio-wasm-js#readme",
   "scripts": {
     "eslint": "eslint .",

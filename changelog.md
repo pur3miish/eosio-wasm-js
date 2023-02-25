@@ -1,5 +1,11 @@
 # EOSIO WASM JS
 
+## v4.0.1
+
+### Patch
+
+- Fixes added to package.json exports (missing file extenstions) and removed main field.
+
 ## v4.0.0
 
 ### Major
