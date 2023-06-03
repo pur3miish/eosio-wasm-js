@@ -1,5 +1,9 @@
 # EOSIO WASM JS
 
+## v4.1.0
+
+- Added serailisation for public keys R1, K1 and WA and legacy.
+
 ## v4.0.1
 
 ### Patch

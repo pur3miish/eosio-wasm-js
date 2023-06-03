@@ -34,5 +34,6 @@ export function serialize_action({ account, action, authorization, hex_data }) {
 export function serialize_actions(action_list) {
   let hex_str = serialize_varuint32(action_list.length);
   for (const action of action_list) hex_str += serialize_action(action);
+
   return hex_str;
 }

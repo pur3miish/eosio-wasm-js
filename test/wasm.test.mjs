@@ -153,6 +153,28 @@ export default (tests) => {
   tests.add("public key serialisation", async () => {
     strictEqual(
       await wasm.public_key(
+        "PUB_R1_6FPFZqw5ahYrR9jD96yDbbDNTdKtNqRbze6oTDLntrsANgQKZu"
+      ),
+      "0102b323ea27d191143eb9ad27c96db15d8b129d3096a0cb17ae11ae26abce803340"
+    );
+
+    strictEqual(
+      await wasm.public_key(
+        "PUB_WA_323xpHU17pKZ6VsygcdXxq7cgosxSyRU5KGevyjUNtw4m9Y63EzPs3SEVpsf7rjeVLa7"
+      ),
+      "0202d2f1a8ab432274ba21081fe5e1601c379e0e41dba2740b3fdc7f5f43240b1944020b776562617574682e636f6d"
+    );
+
+    strictEqual(
+      await wasm.public_key(
+        "EOS518vvdSbDRUkPTXhMaGf2hNGN8RPvHGXdkr2YDsLPh81tDbg7D"
+      ),
+      await wasm.public_key(
+        "PUB_K1_518vvdSbDRUkPTXhMaGf2hNGN8RPvHGXdkr2YDsLPh81sS6DGm"
+      )
+    );
+    strictEqual(
+      await wasm.public_key(
         "EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV"
       ),
       "0002c0ded2bc1f1305fb0faac5e6c03ee3a1924234985427b6167ca569d13df435cf",
