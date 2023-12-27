@@ -349,8 +349,8 @@ export default (tests) => {
     );
   });
   tests.add("Bytes serialisation", () => {
-    strictEqual(bytes("AAFF"), "04aaff");
-    strictEqual(wasm.bytes("AAFF"), "04aaff");
+    strictEqual(bytes("AAFF"), "02aaff");
+    strictEqual(wasm.bytes("AAFF"), "02aaff");
     throws(() => bytes("AAFFGK"));
   });
 

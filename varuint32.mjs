@@ -12,7 +12,8 @@ function varuint32(number, buffer = []) {
     ? varuint32(number >>> 7, [...buffer, 0x80 | (number & 0x7f)])
     : buffer
         .concat(number)
-        .reduce((acc, i) => (acc += i.toString(16).padStart(2, "00")), "");
+        .map((i) => i.toString(16).padStart(2, "0"))
+        .join("");
 }
 
 export default varuint32;

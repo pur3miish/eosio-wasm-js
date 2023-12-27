@@ -11,7 +11,7 @@ function bytes(byte_string) {
 
   byte_string = byte_string.toLowerCase();
 
-  return varuint32(byte_string.length) + byte_string;
+  return varuint32(byte_string.length / 2) + byte_string;
 }
 
 export default bytes;

@@ -1,5 +1,11 @@
 # EOSIO WASM JS
 
+## v4.1.1
+
+### Patch
+
+- Fixed byte serialisation bug, hex codes are two chars long for one byte, fix the leb128 encoding.
+
 ## v4.1.0
 
 - Added serailisation for public keys R1, K1 and WA and legacy.
