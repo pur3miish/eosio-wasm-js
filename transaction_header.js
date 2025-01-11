@@ -1,4 +1,4 @@
-import varuint32 from "./varuint32.mjs";
+import varuint32 from "./varuint32.js";
 
 const serialize_uint = (uint) => {
   let hex = uint.toString("16");

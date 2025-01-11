@@ -1,5 +1,5 @@
-import base58_to_binary from "base58-js/base58_to_binary.mjs";
-import ripemd160 from "ripemd160-js/ripemd160.mjs";
+import base58_to_binary from "base58-js/base58_to_binary";
+import ripemd160 from "ripemd160-js";
 
 /**
  * Serialises an EOS signature to WASM hex string.

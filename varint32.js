@@ -1,4 +1,4 @@
-import varuint32 from "./varuint32.mjs";
+import varuint32 from "./varuint32.js";
 
 /**
  * varint32

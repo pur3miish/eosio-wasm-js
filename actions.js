@@ -1,6 +1,6 @@
-import serialize_name from "./name.mjs";
-import serialize_permission from "./permission.mjs";
-import serialize_varuint32 from "./varuint32.mjs";
+import serialize_name from "./name.js";
+import serialize_permission from "./permission.js";
+import serialize_varuint32 from "./varuint32.js";
 
 /**
  * Serializes EOSIO actions to a WASM hex string for mutating the state of a smart contract.

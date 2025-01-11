@@ -1,5 +1,5 @@
-import asset from "./asset.mjs";
-import name from "./name.mjs";
+import asset from "./asset.js";
+import name from "./name.js";
 
 /**
  * Serialises an extended asset to WASM hex string.

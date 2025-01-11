@@ -1,25 +1,25 @@
-import { serialize_actions } from "./actions.mjs";
-import serialize_asset from "./asset.mjs";
-import serialize_block_timestamp_type from "./block_time_stamp.mjs";
-import serialize_bool from "./bool.mjs";
-import serialize_bytes from "./bytes.mjs";
-import serialize_checksum from "./checksum.mjs";
-import serialize_extended_asset from "./extended_asset.mjs";
-import serialize_float32 from "./float32.mjs";
-import serialize_float64 from "./float64.mjs";
-import serialize_float128 from "./float128.mjs";
-import serialize_int from "./int.mjs";
-import serialize_name from "./name.mjs";
-import serialize_public_key from "./public_key.mjs";
-import serialize_signature from "./signature.mjs";
-import serialize_string from "./string.mjs";
-import serialize_symbol from "./symbol.mjs";
-import serialize_symbol_code from "./symbol_code.mjs";
-import serialize_time_point from "./time_point.mjs";
-import serialize_time_point_sec from "./time_point_sec.mjs";
-import serialize_uint from "./uint.mjs";
-import serialize_varint32 from "./varint32.mjs";
-import serialize_varuint32 from "./varuint32.mjs";
+import { serialize_actions } from "./actions.js";
+import serialize_asset from "./asset.js";
+import serialize_block_timestamp_type from "./block_time_stamp.js";
+import serialize_bool from "./bool.js";
+import serialize_bytes from "./bytes.js";
+import serialize_checksum from "./checksum.js";
+import serialize_extended_asset from "./extended_asset.js";
+import serialize_float32 from "./float32.js";
+import serialize_float64 from "./float64.js";
+import serialize_float128 from "./float128.js";
+import serialize_int from "./int.js";
+import serialize_name from "./name.js";
+import serialize_public_key from "./public_key.js";
+import serialize_signature from "./signature.js";
+import serialize_string from "./string.js";
+import serialize_symbol from "./symbol.js";
+import serialize_symbol_code from "./symbol_code.js";
+import serialize_time_point from "./time_point.js";
+import serialize_time_point_sec from "./time_point_sec.js";
+import serialize_uint from "./uint.js";
+import serialize_varint32 from "./varint32.js";
+import serialize_varuint32 from "./varuint32.js";
 
 export default {
   actions: (x) => serialize_actions(x),

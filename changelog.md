@@ -1,5 +1,12 @@
 # EOSIO WASM JS
 
+## v5.0.0
+
+### Major
+
+- ESM modules/ no longer using the .mjs extension.
+- Test suite changed to moch/chai.
+
 ## v4.1.1
 
 ### Patch
@@ -20,7 +27,7 @@
 
 ### Major
 
-- Renamed index.mjs to [serialize.mjs](./serialize.mjs)
+- Renamed index.js to [serialize.js](./serialize.js)
 
 ### Patch
 
@@ -37,7 +44,7 @@
 ### Major
 
 - Package is now ESM from CJS.
-- Serialize action data argument is now called serialize [hex_data](/actions.mjs).
+- Serialize action data argument is now called serialize [hex_data](/actions.js).
 
 ## v2.1.1
 

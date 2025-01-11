@@ -1,5 +1,5 @@
-import uint from "./uint.mjs";
-import checkDateParse from "./utils/checkDataParse.mjs";
+import uint from "./uint.js";
+import checkDateParse from "./utils/checkDataParse.js";
 
 /**
  * Convert date in ISO format to `time_point_sec` (seconds since epoch) WASM string.

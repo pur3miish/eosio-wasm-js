@@ -1,4 +1,4 @@
-import uint from "./uint.mjs";
+import uint from "./uint.js";
 
 /**
  * Serializes any signed integer (uint) to hexadecimal code.

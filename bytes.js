@@ -1,4 +1,4 @@
-import varuint32 from "./varuint32.mjs";
+import varuint32 from "./varuint32.js";
 
 /**
  * Serilaises byte string to WASM bytes.

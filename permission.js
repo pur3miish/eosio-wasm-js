@@ -1,4 +1,4 @@
-import serialize_name from "./name.mjs";
+import serialize_name from "./name.js";
 
 /**
  * Serializes EOS permission.

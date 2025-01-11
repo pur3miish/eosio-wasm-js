@@ -23,7 +23,7 @@ For Deno, make sure you include this import in your `deno.json` file:
 ## Example
 
 ```js
-import serialize from "eosio-wasm-js/serialize.mjs";
+import serialize from "eosio-wasm-js/serialize.js";
 
 console.log(serialize.asset("EOS"));
 ```
@@ -42,28 +42,28 @@ Consider a [BigInt](https://caniuse.com/?search=bigint) polyfill library for saf
 
 The [npm](https://npmjs.com) package [`eosio-wasm-js`](https://npm.im/eosio-wasm-js) features [optimal JavaScript module design](https://jaydenseric.com/blog/optimal-javascript-module-design). It doesn’t have a main index module, so use deep imports from the ECMAScript modules that are exported via the [`package.json`](./package.json) field [`exports`](https://nodejs.org/api/packages.html#exports):
 
-- [`actions.mjs`](actions.mjs)
-- [`asset.mjs`](asset.mjs)
-- [`block_time_stamp.mjs`](block_time_stamp.mjs)
-- [`bool.mjs`](bool.mjs)
-- [`bytes.mjs`](bytes.mjs)
-- [`checksum.mjs`](checksum.mjs)
-- [`extended_asset.mjs`](extended_asset.mjs)
-- [`float32.mjs`](float32.mjs)
-- [`float64.mjs`](float64.mjs)
-- [`float128.mjs`](float128.mjs)
-- [`int.mjs`](int.mjs)
-- [`name.mjs`](name.mjs)
-- [`public_key.mjs`](public_key.mjs)
-- [`serialize.mjs`](serialize.mjs)
-- [`signature.mjs`](signature.mjs)
-- [`string.mjs`](string.mjs)
-- [`symbol.mjs`](symbol.mjs)
-- [`symbol_code.mjs`](symbol_code.mjs)
-- [`time_point.mjs`](time_point.mjs)
-- [`time_point_sec.mjs`](time_point_sec.mjs)
-- [`uint.mjs`](uint.mjs)
-- [`varint32.mjs`](varint32.mjs)
-- [`varuint32.mjs`](varuint32.mjs)
-- [`transaction_header.mjs`](transaction_header.mjs)
-- [`permission.mjs`](permission.mjs)
+- [`actions.js`](actions.js)
+- [`asset.js`](asset.js)
+- [`block_time_stamp.js`](block_time_stamp.js)
+- [`bool.js`](bool.js)
+- [`bytes.js`](bytes.js)
+- [`checksum.js`](checksum.js)
+- [`extended_asset.js`](extended_asset.js)
+- [`float32.js`](float32.js)
+- [`float64.js`](float64.js)
+- [`float128.js`](float128.js)
+- [`int.js`](int.js)
+- [`name.js`](name.js)
+- [`public_key.js`](public_key.js)
+- [`serialize.js`](serialize.js)
+- [`signature.js`](signature.js)
+- [`string.js`](string.js)
+- [`symbol.js`](symbol.js)
+- [`symbol_code.js`](symbol_code.js)
+- [`time_point.js`](time_point.js)
+- [`time_point_sec.js`](time_point_sec.js)
+- [`uint.js`](uint.js)
+- [`varint32.js`](varint32.js)
+- [`varuint32.js`](varuint32.js)
+- [`transaction_header.js`](transaction_header.js)
+- [`permission.js`](permission.js)
