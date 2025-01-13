@@ -1,5 +1,13 @@
 # EOSIO WASM JS
 
+## v5.0.2
+
+- exports file .js.
+
+## v5.0.1
+
+- Dependencies updates.
+
 ## v5.0.0
 
 ### Major

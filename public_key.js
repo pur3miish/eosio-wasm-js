@@ -1,5 +1,5 @@
 import base58_to_binary from "base58-js/base58_to_binary";
-import ripemd160 from "ripemd160-js";
+import ripemd160 from "ripemd160-js/ripemd160.js";
 /**
  * Serilaises Antelope public keys to WASM hex string.
  * @name public_key
